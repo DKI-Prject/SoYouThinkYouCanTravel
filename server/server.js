@@ -17,3 +17,58 @@ const client = new MongoClient(mongodb_uri);
 app.use(cors());
 app.use(express.json());
 
+
+app.get("/beaches", async (request, response)=>{
+    try {
+        const database = await client.db(db);
+        const coll = await database.collection(collection1); //may use request instead of collection
+        const data = await coll.find().toArray();
+        response.status(200).send(data);
+
+    } catch(error) {
+        console.error(`CODE MACHINE BROKE: ERROR ${error}`)
+    }
+});
+
+app.get("/mountains", async (request, response)=>{
+    try {
+        const database = await client.db(db);
+        const coll = await database.collection(collection2); //may use request instead of collection
+        const data = await coll.find().toArray();
+        response.status(200).send(data);
+
+    } catch(error) {
+        console.error(`CODE MACHINE BROKE: ERROR ${error}`)
+    }
+});
+
+app.get("/nature", async (request, response)=>{
+    try {
+        const database = await client.db(db);
+        const coll = await database.collection(collection3); //may use request instead of collection
+        const data = await coll.find().toArray();
+        response.status(200).send(data);
+
+    } catch(error) {
+        console.error(`CODE MACHINE BROKE: ERROR ${error}`)
+    }
+});
+
+app.get("/parks", async (request, response)=>{
+    try {
+        const database = await client.db(db);
+        const coll = await database.collection(collection4); //may use request instead of collection
+        const data = await coll.find().toArray();
+        response.status(200).send(data);
+
+    } catch(error) {
+        console.error(`CODE MACHINE BROKE: ERROR ${error}`)
+    }
+});
+
+
+
+
+app.listen(PORT, ()=>{
+    console.log(`Server is now listening on Port: ${PORT}`)
+});

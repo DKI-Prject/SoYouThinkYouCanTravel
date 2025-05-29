@@ -8,7 +8,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [totalQuestions, setTotalQuestions] = useState(0);
   const [category, setCategory] = useState(null);
-  const categories = ['beaches', 'mountains', 'nature', 'parks']; // Add your categories here
+  const categories = ['beaches', 'mountains', 'nature', 'parks'];
 
   const handleCategorySelect = (selectedCategory) => {
     setCategory(selectedCategory);
